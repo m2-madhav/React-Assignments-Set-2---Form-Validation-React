@@ -110,7 +110,7 @@ export default class SignUp extends React.Component {
           data-testid="phoneNumber"
           type="text"
           name="phoneNumber"
-          value={this.state.phNo}
+          value={this.state.phoneNumber}
           onChange={this.handleChange}
         />
         <br />
