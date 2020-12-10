@@ -76,6 +76,7 @@ export default class SignUp extends React.Component {
   render() {
     return (
       <div className="container">
+        Name:
         <input
           data-testid="name"
           type="text"
@@ -84,6 +85,9 @@ export default class SignUp extends React.Component {
           value={this.state.name}
           onChange={this.handleChange}
         />
+        <br />
+        <br />
+        Email:
         <input
           data-testid="email"
           type="text"
@@ -92,6 +96,9 @@ export default class SignUp extends React.Component {
           value={this.state.email}
           onChange={this.handleChange}
         />
+        <br />
+        <br />
+        Gender:
         <input
           data-testid="gender"
           type="text"
@@ -99,6 +106,9 @@ export default class SignUp extends React.Component {
           value={this.state.gender}
           onChange={this.handleChange}
         />
+        <br />
+        <br />
+        Phone Number:
         <input
           data-testid="phoneNumber"
           type="text"
@@ -107,6 +117,9 @@ export default class SignUp extends React.Component {
           value={this.state.phNo}
           onChange={this.handleChange}
         />
+        <br />
+        <br />
+        Password:
         <input
           data-testid="password"
           type="password"
@@ -115,6 +128,8 @@ export default class SignUp extends React.Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
+        <br />
+        <br />
         <button data-testid="submit" onClick={this.handleSubmit}>
           Submit
         </button>
