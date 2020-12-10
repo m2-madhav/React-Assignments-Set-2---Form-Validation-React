@@ -1,11 +1,10 @@
-import React, { Component, useState } from "react";
-import "../styles/App.css";
-import SignInSide from "./Login.jsx";
+import React from "react";
+import SignUp from "./SignUp.js";
 
 const App = () => {
   return (
     <div id="main">
-      <SignInSide />
+      <SignUp />
     </div>
   );
 };
