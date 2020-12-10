@@ -128,8 +128,8 @@ export default class SignUp extends React.Component {
         <button data-testid="submit" onClick={this.handleSubmit}>
           Submit
         </button>
-        {this.state.errorMessage && <div>{this.state.errorMessage}</div>}
-        {this.state.userName && <div>Hello {this.state.userName}</div>}
+        {this.state.errorMessage && <h3>{this.state.errorMessage}</h3>}
+        {this.state.userName && <h1>Hello {this.state.userName}</h1>}
       </div>
     );
   }
