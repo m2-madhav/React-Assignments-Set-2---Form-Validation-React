@@ -7,7 +7,7 @@ export default class SignUp extends React.Component {
       name: "",
       email: "",
       gender: "male",
-      phoneNumber: "",
+      phNo: "",
       password: "",
       errorMessage: "",
       userName: ""
@@ -19,19 +19,19 @@ export default class SignUp extends React.Component {
   };
 
   handleSubmit = () => {
-    const alphaNumeric = /^[0-9a-zA-Z]+$/;
+    const alphanumeric = /^[0-9a-zA-Z ]+$/;
     const numbers = /^\d+$/;
     if (
       this.state.name === "" ||
       this.state.email === "" ||
-      this.state.phoneNumber === "" ||
+      this.state.phNo === "" ||
       this.state.gender === "" ||
       this.state.password === ""
     ) {
       this.setState({ errorMessage: "All fields are mandatory", userName: "" });
       return;
     }
-    if (!this.state.name.match(alphaNumeric)) {
+    if (!this.state.name.match(alphanumeric)) {
       this.setState({ errorMessage: "Name is not alphanumeric", userName: "" });
       return;
     }
@@ -47,7 +47,7 @@ export default class SignUp extends React.Component {
       });
       return;
     }
-    if (!numbers.test(this.state.phoneNumber)) {
+    if (!numbers.test(this.state.phNo)) {
       this.setState({
         errorMessage: "Phone Number must contain only numbers",
         userName: ""
@@ -68,34 +68,30 @@ export default class SignUp extends React.Component {
       name: "",
       email: "",
       gender: "male",
-      phoneNumber: "",
+      phNo: "",
       password: ""
     });
   };
+
   render() {
     return (
       <div className="container">
-        Name:
         <input
           data-testid="name"
           type="text"
           name="name"
+          placeholder="Name"
           value={this.state.name}
           onChange={this.handleChange}
         />
-        <br />
-        <br />
-        Email:
         <input
           data-testid="email"
           type="text"
           name="email"
+          placeholder="Email"
           value={this.state.email}
           onChange={this.handleChange}
         />
-        <br />
-        <br />
-        Gender:
         <input
           data-testid="gender"
           type="text"
@@ -103,32 +99,26 @@ export default class SignUp extends React.Component {
           value={this.state.gender}
           onChange={this.handleChange}
         />
-        <br />
-        <br />
-        PhoneNumber:
         <input
           data-testid="phoneNumber"
           type="text"
-          name="phoneNumber"
-          value={this.state.phoneNumber}
+          name="phNo"
+          placeholder="Phone Number"
+          value={this.state.phNo}
           onChange={this.handleChange}
         />
-        <br />
-        <br />
-        Password:
         <input
           data-testid="password"
           type="password"
           name="password"
+          placeholder="Password"
           value={this.state.password}
           onChange={this.handleChange}
         />
-        <br />
-        <br />
         <button data-testid="submit" onClick={this.handleSubmit}>
           Submit
         </button>
-        {this.state.errorMessage && <h3>{this.state.errorMessage}</h3>}
+        {this.state.errorMessage && <h1>{this.state.errorMessage}</h1>}
         {this.state.userName && <h1>Hello {this.state.userName}</h1>}
       </div>
     );
